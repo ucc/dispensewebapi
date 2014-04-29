@@ -29,7 +29,7 @@ def requires_auth(f):
 			return {'status': 'error', 'errmsg': 'Authentication failed: Invalid username'}
 		dn = 'uid=%s,ou=People,dc=ucc,dc=gu,dc=uwa,dc=edu,dc=au' % username
 		try:
-			l = ldap.initialize('ldap://mussel.ucc.gu.uwa.edu.au')
+			l = ldap.initialize('ldaps://mussel.ucc.gu.uwa.edu.au')
 			l.simple_bind_s(dn, password)
 			l.unbind_s()
 		except:
